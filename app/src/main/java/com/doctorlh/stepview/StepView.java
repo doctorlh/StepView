@@ -8,7 +8,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.View;
@@ -143,12 +142,10 @@ public class StepView extends View {
             int stopX = mCurrentDrawables.get(j).getBounds().left;
             if (j <= currentStep - 1) {
                 mProgressPaint.setColor(mProgressColor);
-                canvas.drawLine(startX, top - marginToCenter, stopX, top - marginToCenter, mProgressPaint);
             } else {
                 mProgressPaint.setColor(mProgressDisColor);
-                canvas.drawLine(startX, top - marginToCenter, stopX, top - marginToCenter, mProgressPaint);
             }
-
+            canvas.drawLine(startX, top - marginToCenter, stopX, top - marginToCenter, mProgressPaint);
         }
     }
 
